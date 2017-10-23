@@ -1,3 +1,21 @@
+package processing.test.wac;
+
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class WAC extends PApplet {
+
 //initializing variables
 Mole topRight;
 Mole topCenter;
@@ -22,8 +40,8 @@ PImage[] hammer;
 PImage img;
 //PImage myBg;
 
-void setup() {
-  size(550, 550);
+public void setup() {
+  
   imageMode(CENTER);
   textAlign(CENTER);
   score = 0;
@@ -53,7 +71,7 @@ void setup() {
   bottomLeft = new Mole(410+25, 395);
 }
 
-void draw() {
+public void draw() {
   if (gameOver == false) {
     background(0);
     //myBg = loadImage("blood.gif");
@@ -134,7 +152,7 @@ void draw() {
   }
 }
 
-void mousePressed() {
+public void mousePressed() {
   topRight.checkHit();
   topCenter.checkHit();
   topLeft.checkHit();
@@ -148,7 +166,7 @@ void mousePressed() {
   bottomLeft.checkHit();
 }
 
-void displayTimeScore() {
+public void displayTimeScore() {
   textFont(f, 30);
   //myBg = loadImage("blood.gif");
   fill(200, 0, 0);
@@ -156,7 +174,7 @@ void displayTimeScore() {
   text("Time: " + timeLeft + " Score: " + score + "\nGoal: Help Your Friends!", width/2, height - 50);
 }
 
-void reset() {
+public void reset() {
   score = 0;
   timer.totalTime = 30;
   timer.startTimer();
@@ -216,16 +234,16 @@ class Mole {
     resetTimers();
   }
 
-  void resetTimers()
+  public void resetTimers()
   {
     // pick a random amount of time to stay in this currentMole
-    totalCurrentMoleTime = int(random(50, 600));
+    totalCurrentMoleTime = PApplet.parseInt(random(50, 600));
 
     // reset our current counter
     currentMoleTime = 0;
   }
 
-  void update()
+  public void update()
   {
     // increase amount of time in our current currentMole
     currentMoleTime++;
@@ -247,14 +265,14 @@ class Mole {
   }
 
 
-  void display() {
+  public void display() {
     image(moles[currentMole], xPos, yPos);
   } 
 
 
 
   //hits
-  void checkHit() {
+  public void checkHit() {
     //generic
     if (dist(mouseX, mouseY, xPos, yPos) < 70) {
       //if good
@@ -273,7 +291,7 @@ class Mole {
   }
 
 
-  void moleGameOver() {
+  public void moleGameOver() {
     gameOver = true;
   }
 }
@@ -288,11 +306,11 @@ class Timer {
     totalTime = time;
   }
 
-  void startTimer() {
+  public void startTimer() {
     savedTime = millis()/1000; //seconds
   }
 
-  boolean isFinished() {
+  public boolean isFinished() {
     passedTime = (millis()/1000) - savedTime;
     if (passedTime > totalTime) {
       return true;
@@ -301,4 +319,6 @@ class Timer {
       return false;
     }
   }
+}
+  public void settings() {  size(550, 550); }
 }
