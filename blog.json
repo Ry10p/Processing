@@ -1,0 +1,83 @@
+[
+  {
+    "id":0,
+    "headline": "Front End Blog",
+    "topics":[
+      {
+        "id":0,
+        "name":"React",
+        "skill":"Front-End"
+      },
+      {
+        "id":1,
+        "name":"Stencil",
+        "skill":"Front-End"
+      },
+      {
+        "id":2,
+        "name":"Geographic Data Viz",
+        "skill":"Front-End"
+      },
+       {
+        "id":3,
+        "name":"D3",
+        "skill":"Front-End"
+      }
+    ]
+
+  },
+  {
+    "id":1,
+    "headline": "Python & DataBase Blog",
+    "topics":[
+      {
+        "id":0,
+        "name":"Django",
+        "skill":"Python3 & DB"
+      },
+      {
+        "id":1,
+        "name":"Pure Python",
+        "skill":"Python3 & DB"
+      },
+      {
+        "id":2,
+        "name":"GIS Python",
+        "skill":"Python3 & DB"
+      },
+       {
+        "id":3,
+        "name":"Post-GIS",
+        "skill":"Python3 & DB"
+      }
+    ]
+
+  },
+  {
+    "id":3,
+    "headline": "Native & Hybrid Blog",
+    "topics":[
+      {
+        "id":0,
+        "name":"Cordova",
+        "skill":"Apps"
+      },
+      {
+        "id":1,
+        "name":"Ionic",
+        "skill":"Apps"
+      },
+      {
+        "id":2,
+        "name":"Beeware",
+        "skill":"Apps"
+      },
+       {
+        "id":3,
+        "name":"GoDot",
+        "skill":"Apps"
+      }
+    ]
+
+  }
+]
